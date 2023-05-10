@@ -1,8 +1,15 @@
+import { Container } from './Container';
 import { Profile } from './Profile';
 import user from '../configs/user';
 
 import { Statistics } from './Statistics';
 import data from '../configs/data';
+
+import { TransactionHistory } from './TransactionHistory';
+import transactions from '../configs/transaction';
+
+import { FriendList } from './FriendList';
+import friends from '../configs/friends';
 
 export const App = () => {
   return (
@@ -15,6 +22,8 @@ export const App = () => {
         stats={user.stats}
       />
       <Statistics title="Upload stats" stats={data} />
+      <TransactionHistory items={transactions} />
+      <FriendList friends={friends} />
     </Container>
   );
 };
