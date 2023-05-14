@@ -1,19 +1,17 @@
-import { Container } from './Container';
-import { Profile } from './Profile';
-import user from '../configs/user';
+import { Layout } from './Layout/Layout';
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statistics/Statistics';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import { FriendList } from './FriendList/FriendList';
 
-import { Statistics } from './Statistics';
-import data from '../configs/data';
-
-import { TransactionHistory } from './TransactionHistory';
-import transactions from '../configs/transaction';
-
-import { FriendList } from './FriendList';
-import friends from '../configs/friends';
+import user from '../data/user';
+import data from '../data/data';
+import transactions from '../data/transaction';
+import friends from '../data/friends';
 
 export const App = () => {
   return (
-    <Container>
+    <Layout>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -24,6 +22,6 @@ export const App = () => {
       <Statistics title="Upload stats" stats={data} />
       <TransactionHistory items={transactions} />
       <FriendList friends={friends} />
-    </Container>
+    </Layout>
   );
 };

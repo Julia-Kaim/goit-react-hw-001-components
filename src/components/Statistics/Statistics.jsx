@@ -1,17 +1,21 @@
 import PropTypes from 'prop-types';
-import s from './Statistics.module.css';
+import styles from './Statistics.module.css';
 const colors = ['#CDB4DB', '#FFC8DD', '#FFAFCC', '#BDE0FE', '#A2D2FF'];
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className={s.statistics}>
-      {title && <h2 className={s.title}>{title}</h2>}
+    <section className={styles.statistics}>
+      {Boolean(title) && <h2 className={styles.title}>{title}</h2>}
 
-      <ul className={s.list}>
+      <ul className={styles.list}>
         {stats.map(({ id, label, percentage }, index) => (
-          <li className={s.item} key={id} style={{ background: colors[index] }}>
-            <span className={s.label}>{label}</span>
-            <span className={s.percentage}>{percentage}</span>
+          <li
+            className={styles.item}
+            key={id}
+            style={{ background: colors[index] }}
+          >
+            <span className={styles.label}>{label}</span>
+            <span className={styles.percentage}>{percentage}</span>
           </li>
         ))}
       </ul>
